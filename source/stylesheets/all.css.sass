@@ -1,20 +1,23 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat)
+@import "compass/css3"
 
 body
-  font-family: "Helvetica Neue", Arial, sans-serif
-  text-align: center
-  display: -webkit-flexbox
-  display: -ms-flexbox
-  display: -webkit-flex
-  display: flex
-  -webkit-flex-align: center
-  -ms-flex-align: center
-  -webkit-align-items: center
+  @include display-box
+  @include box-pack(center)
+  @include box-align(center)
+  @include box-sizing(border-box)
   align-items: center
-  text-align: center
+  font-family: "Helvetica Neue", Arial, sans-serif
+  display: flex
   height: 100%
-  width: 100%
   position: absolute
+  padding: 20px
+  text-align: center
+  width: 100%
+
+//
+// Main content
+//
 
 .main-content
   margin: 0 auto
@@ -26,48 +29,65 @@ body
     font-family: 'Montserrat', sans-serif
 
   p
+    display: inline-block
     font-weight: 200
     color: #adadad
     font-size: 20px
     font-weight: 200
-    display: block
     height: 30px
+    margin: 0 0 20px 0
 
+//
+// Buttons
+//
+
+.buttons
+  display: inline-block
+
+.button
+  padding: 5px 10px
+  display: inline-block
+  font-size: 13px
+  text-decoration: none
+  font-weight: 500
+  position: relative
+  top: -2px
+  text-transform: uppercase
+
+  &:first-child
+    margin-left: 5px
+
+  &.button-yes
+    background-color: #daf8de
+    color: #3fa34d
+
+    &:hover
+      background-color: darken(#daf8de, 2)
+
+    &:active
+      background-color: darken(#daf8de, 7)
+
+  &.button-no
+    background-color: #f8e0d8
+    color: #e2865d
+
+    &:hover
+      background-color: darken(#f8e0d8, 2)
+
+    &:active
+      background-color: darken(#f8e0d8, 7)
+
+@media screen and (max-width: 320px)
   .button
-    padding: 5px 10px
-    display: inline-block
-    font-size: 13px
-    text-decoration: none
-    font-weight: 500
-    position: relative
-    top: -2px
-    text-transform: uppercase
+    font-size: 16px
+    padding: 8px 16px
 
-    &:first-child
-      margin-left: 5px
+//
+// Questions
+//
 
-    &.button-yes
-      background-color: #daf8de
-      color: #3fa34d
+.question
+  display: block
 
-      &:hover
-        background-color: darken(#daf8de, 2)
-
-      &:active
-        background-color: darken(#daf8de, 7)
-
-    &.button-no
-      background-color: #f8e0d8
-      color: #e2865d
-
-      &:hover
-        background-color: darken(#f8e0d8, 2)
-
-      &:active
-        background-color: darken(#f8e0d8, 7)
-
-  .question
-    display: block
-
-    &.question-hidden
-      display: none
+  &.question-hidden
+    display: none
