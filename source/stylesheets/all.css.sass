@@ -21,6 +21,7 @@ body
 //
 
 .main-content
+  height: 80px
   margin: 0 auto
   text-align: center
 
@@ -35,8 +36,11 @@ body
     color: #adadad
     font-size: 20px
     font-weight: 200
-    height: 30px
     margin: 0 0 9px 0
+
+@media screen and (max-width: 320px)
+  .main-content
+    height: 150px
 
 //
 // Buttons
