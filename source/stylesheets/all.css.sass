@@ -1,21 +1,29 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat)
 @import "compass/css3/box"
 @import "compass/css3/box-sizing"
+@import "compass/css3/font-face"
+
+@include font-face("Mono Social Icons Font", font-files("MonoSocialIconsFont-1.10.woff", "MonoSocialIconsFont-1.10.ttf", "MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont"), "MonoSocialIconsFont-1.10.eot", normal, normal)
 
 body
-  @include display-box
-  @include box-pack(center)
-  @include box-align(center)
   @include box-sizing(border-box)
-  align-items: center
   font-family: "Helvetica Neue", Arial, sans-serif
   display: flex
   height: 100%
   position: absolute
-  padding: 20px
   text-align: center
   width: 100%
   -webkit-font-smoothing: antialiased
+
+.symbol, a.symbol:before
+  font-family: 'Mono Social Icons Font'
+  -webkit-text-rendering: optimizeLegibility
+  -moz-text-rendering: optimizeLegibility
+  -ms-text-rendering: optimizeLegibility
+  -o-text-rendering: optimizeLegibility
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-font-smoothing: antialiased
 
 //
 // Main content
@@ -25,6 +33,9 @@ body
   height: 80px
   margin: 0 auto
   text-align: center
+  position: relative
+  top: 40%
+  width: 100%
 
   h1
     font-size: 27px
@@ -41,6 +52,7 @@ body
 
 @media screen and (max-width: 320px)
   .main-content
+    top: 20%
     height: 150px
 
 //
@@ -101,3 +113,23 @@ body
 
   &.question-hidden
     display: none
+
+
+//
+// Social icons
+//
+
+.social-icons
+  position: absolute
+  text-align: center
+  bottom: 20px
+  width: 100%
+
+  .symbol
+    color: #EDEDED
+    border: none
+    text-decoration: none
+    font-size: 30px
+
+    &:hover
+      color: #DEDEDE
