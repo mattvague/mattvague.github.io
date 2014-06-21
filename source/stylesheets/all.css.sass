@@ -2,6 +2,7 @@
 @import "compass/css3/box"
 @import "compass/css3/box-sizing"
 @import "compass/css3/font-face"
+@import "compass/css3/transition"
 
 @include font-face("Mono Social Icons Font", font-files("MonoSocialIconsFont-1.10.woff", "MonoSocialIconsFont-1.10.ttf", "MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont"), "MonoSocialIconsFont-1.10.eot", normal, normal)
 
@@ -71,6 +72,12 @@ body
   position: relative
   top: -2px
   text-transform: uppercase
+  @include single-transition(color, 0.2s)
+  @include single-transition(background-color, 0.2s)
+
+  &:hover
+    @include single-transition(color, 0.2s)
+    @include single-transition(background-color, 0.2s)
 
   &:first-child
     margin-left: 5px
@@ -80,20 +87,24 @@ body
     color: #3fa34d
 
     &:hover
-      background-color: darken(#daf8de, 2)
+      background-color: darken(#daf8de, 4.25)
+      color: darken(#3fa34d, 4.25)
 
     &:active
-      background-color: darken(#daf8de, 7)
+      background-color: darken(#daf8de, 8)
+      color: darken(#3fa34d, 8)
 
   &.button-no
     background-color: #f8e0d8
     color: #e2865d
 
     &:hover
-      background-color: darken(#f8e0d8, 2)
+      background-color: darken(#f8e0d8, 3)
+      color: darken(#e2865d, 3)
 
     &:active
-      background-color: darken(#f8e0d8, 7)
+      background-color: darken(#f8e0d8, 8)
+      color: darken(#e2865d, 8)
 
 @media screen and (max-width: 320px)
   .buttons
@@ -126,15 +137,17 @@ body
   width: 100%
 
   .symbol
-    color: #EDEDED
+    color: #F0F0F0
     border: none
     text-decoration: none
     font-size: 30px
     padding: 2px
     margin: 0
+    @include single-transition(color, 0.2s)
 
     &:hover
-      color: #DEDEDE
+      color: darken(#F0F0F0, 8)
+      @include single-transition(color, 0.2s)
 
 @media screen and (max-width: 320px)
   .social-icons
