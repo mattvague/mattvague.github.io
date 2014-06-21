@@ -76,8 +76,8 @@ body
   @include single-transition(background-color, 0.2s)
 
   &:hover
-    @include single-transition(color, 0.2s)
-    @include single-transition(background-color, 0.2s)
+    @include single-transition(color, 0.1s)
+    @include single-transition(background-color, 0.1s)
 
   &:first-child
     margin-left: 5px
@@ -143,11 +143,11 @@ body
     font-size: 30px
     padding: 2px
     margin: 0
-    @include single-transition(color, 0.2s)
+    @include single-transition(color, 0.5s)
 
     &:hover
       color: darken(#F0F0F0, 8)
-      @include single-transition(color, 0.2s)
+      @include single-transition(color, 0.1s)
 
 @media screen and (max-width: 320px)
   .social-icons
