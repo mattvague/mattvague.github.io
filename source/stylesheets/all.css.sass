@@ -1,20 +1,25 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat)
 @import "compass/css3/box"
 @import "compass/css3/box-sizing"
 @import "compass/css3/font-face"
 @import "compass/css3/transition"
+@import "compass/css3/transform"
+@import "compass/css3/border-radius"
 
 @include font-face("Mono Social Icons Font", font-files("MonoSocialIconsFont-1.10.woff", "MonoSocialIconsFont-1.10.ttf", "MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont"), "MonoSocialIconsFont-1.10.eot", normal, normal)
+@include font-face("Fira Sans", font-files("FiraSans-Regular.otf"), normal, normal)
+
+@mixin clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+$heading_color: #4C4C4C
+$text_color: #adadad
 
 body
-  @include box-sizing(border-box)
   -webkit-font-smoothing: antialiased
   font-family: "Helvetica Neue", Arial, sans-serif
-  display: flex
-  height: 100%
-  position: absolute
-  text-align: center
-  width: 100%
 
 .symbol, a.symbol:before
   font-family: 'Mono Social Icons Font'
@@ -31,110 +36,192 @@ body
 //
 
 .main-content
-  height: 80px
   margin: 0 auto
-  text-align: center
-  position: relative
-  top: 40%
-  padding: 20px
+  margin-top: 100px
+  width: 780px
+  text-align: left
+  overflow: visible
+  padding: 0 30px
+
+  header
+    margin: 0 auto
+    margin-bottom: 90px
+    text-align: center
+    width: 60%
+
+    h1
+      width: 100%
+      text-align: center
+
+    p
+      font-size: 19px
+      line-height: 28px
+      text-align: center
+      width: 100%
 
   h1
-    font-size: 24px
-    font-weight: 400
-    font-family: 'Montserrat', sans-serif
+    font-size: 36px
+    font-weight: 500
+    font-family: 'Fira Sans', sans-serif
+    color: $heading_color
+    margin: 0 0 9px 0
+
+  h2
+    font-size: 20px
+    font-weight: 500
+    font-family: 'Fira Sans', sans-serif
+    color: $heading_color
+    margin: 0 0 9px 0
 
   p
-    display: inline-block
+    font-family: 'Avenir', sans-serif
     font-weight: 200
-    color: #adadad
-    font-size: 20px
+    color: $text_color
+    font-size: 14px
     font-weight: 200
     margin: 0 0 9px 0
 
-@media screen and (max-width: 320px)
-  .main-content
-    top: 20%
-    height: 150px
+  strong
+    font-weight: 500
 
-//
-// Buttons
-//
+  hr
+    border: none
+    border-top: solid 1px #E7E7E7
+    margin: 0
 
-.buttons
-  display: inline-block
+  ul
+    list-style: none
+    padding-left: 0px
 
-.button
-  padding: 5px 10px
-  display: inline-block
-  font-size: 13px
-  text-decoration: none
-  font-weight: 500
-  position: relative
-  top: -2px
-  text-transform: uppercase
-  @include single-transition(color, 0.2s)
-  @include single-transition(background-color, 0.2s)
+    li
+      font-family: 'Avenir', sans-serif
+      font-weight: 200
+      color: $text_color
+      font-size: 14px
+      font-weight: 200
+      margin: 0 0 5px 0
 
-  &:hover
-    @include single-transition(color, 0.1s)
-    @include single-transition(background-color, 0.1s)
+      &:before
+        content: "\2713"
+        display: inline-block
+        vertical-align: top
+        margin-right: 8px
 
-  &:first-child
-    margin-left: 5px
+  .portfolio-item
+    @include clearfix
+    clear: both
+    position: relative
+    padding: 70px 0
+    overflow: hidden
+    overflow-x: visible
 
-  &.button-yes
-    background-color: #daf8de
-    color: #3fa34d
+    img
+      display: inline-block
 
-    &:hover
-      background-color: darken(#daf8de, 4.25)
-      color: darken(#3fa34d, 4.25)
+    .portfolio-item-description
+      display: inline-block
+      width: 350px
 
-    &:active
-      background-color: darken(#daf8de, 8)
-      color: darken(#3fa34d, 8)
+    &.image-right
+      img
+        float: right
 
-  &.button-no
-    background-color: #f8e0d8
-    color: #e2865d
+      .portfolio-item-description
+        margin: 0
+        margin-right: 20px
+        float: left
 
-    &:hover
-      background-color: darken(#f8e0d8, 3)
-      color: darken(#e2865d, 3)
+    &.image-left
+      img
+        float: left
 
-    &:active
-      background-color: darken(#f8e0d8, 8)
-      color: darken(#e2865d, 8)
+      .portfolio-item-description
+        margin: 0
+        margin-left: 20px
+        float: right
 
-@media screen and (max-width: 320px)
-  .buttons
-    display: block
-    margin-top: 20px
+    &.portfolio-item-1
+      img
+        position: absolute
+        bottom: -310px
+        @include transform(rotate(-8deg))
 
-  .button
-    font-size: 16px
-    padding: 8px 16px
+    &.portfolio-item-2
+      img
+        position: absolute
+        bottom: -370px
+        right: 5px
+        @include transform(rotate(8deg))
 
-//
-// Questions
-//
+    &.portfolio-item-3
+      .portfolio-item-description
+        position: relative
+        bottom: -20px
 
-.question
-  display: block
+      img
+        position: absolute
+        left: -25px
+        bottom: 30px
 
-  &.question-hidden
-    display: none
+  .about-me
+    @include clearfix
+    margin: 60px auto 0
+    width: 80%
 
+    img
+      float: left
+      margin-right: 15px
+
+    p
+      display: block
+      font-size: 19px
+      line-height: 28px
+
+  .contact-me
+    .contact-button
+      border: solid 8px #FFF
+      background-color: #4FC0A7
+      color: #FFF
+      display: block
+      font-weight: 600
+      font-family: 'Fira Sans', sans-serif
+      font-size: 17px
+      padding: 8px 14px
+      text-decoration: none
+      margin: 0 auto 10px
+      text-align: center
+      width: 100px
+      z-index: 1000
+      position: relative
+
+      &:hover
+        background-color: #75CEBA
+
+    hr
+      position: relative
+      top: -38px
+
+    .new-work-label
+      text-align: center
+      font-size: 15px
+      font-style: italic
+      margin-top: 40px
+
+
+footer
+  margin-top: 60px
+
+//@media screen and (max-width: 320px)
+  //.main-content
+    //width: 280px
 
 //
 // Social icons
 //
 
 .social-icons
-  position: absolute
   text-align: center
-  bottom: 20px
-  width: 100%
+  padding-bottom: 20px
 
   .symbol
     color: #F0F0F0

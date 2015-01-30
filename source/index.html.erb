@@ -3,49 +3,98 @@ title: Matt Vague - Thing Builder
 ---
 
 <div class="main-content">
-  <h1>Matt builds things for the Web &amp; iOS.</h1>
+  <header>
+    <h1>Matt Vague</h1>
+    <p>
+      I’m a software developer from Vancouver, BC. I specialize in building high quality iOS apps backed by fast,
+      stable cloud storage APIs.
+    </p>
+  </header>
 
-  <div class="question question-1">
-    <p>Are you looking for a new thing?</p>
-    <div class="buttons">
-      <a href="#" class="button button-yes" data-next="question-2">Yes</a>
-      <a href="#" class="button button-no" data-next="question-3">No</a>
-    </div>
-  </div>
+  <hr/>
 
-  <div class="question question-2 question-hidden">
-    <p>Just what I wanted to hear!</p>
-    <div class="buttons">
-      <a href="mailto:mattvague@gmail.com" class="button button-yes">Get in touch</a>
-    </div>
-  </div>
+  <section class="portfolio-item portfolio-item-1 image-left">
+    <img src="/images/watch_it.png"/>
+    <div class="portfolio-item-description">
+      <h2>Watch It</h2>
+      <p>
+        Watch It allows you to pick your favourite teams and the conditions that make a game worth watching to you.
+        If a game matches, you'll be notified, otherwise you'll be advised to avoid 3 hours of misery.
+      </p>
 
-  <div class="question question-3 question-hidden">
-    <p>Are you a recruiter?</p>
-    <div class="buttons">
-      <a href="#" class="button button-yes" data-next="question-5">Yes</a>
-      <a href="#" class="button button-no" data-next="question-4">No</a>
+      <ul>
+        <li>Native iOS App</li>
+        <li>Ruby on Rails cloud storage API</li>
+        <li>Game-analyzation library</li>
+      </ul>
     </div>
-  </div>
+  </section>
 
-  <div class="question question-4 question-hidden">
-    <p>Promise?</p>
-    <div class="buttons">
-      <a href="#" class="button button-yes" data-next="question-2">Yes</a>
-      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="button button-no">No</a>
-    </div>
-  </div>
+  <hr/>
 
-  <div class="question question-5 question-hidden">
-    <p>Whoa, I can feel the synergy already!</p>
-    <div class="buttons">
-      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="button button-yes">Get in touch</a>
+  <section class="portfolio-item portfolio-item-2 image-right">
+    <div class="portfolio-item-description">
+      <h2>My Foresome</h2>
+      <p>
+        My Foresome makes it easy to coordinate a round of golf with your buddies.
+      </p>
+
+      <ul>
+        <li>Native iOS App</li>
+        <li>Ruby on Rails cloud storage API</li>
+      </ul>
     </div>
-  </div>
+    <img src="/images/my_foresome.png"/>
+  </section>
+
+  <hr/>
+
+  <section class="portfolio-item portfolio-item-3 image-left">
+    <img src="/images/postcards.png"/>
+    <div class="portfolio-item-description">
+      <h2>Postcards From the Plane</h2>
+      <p>
+        Postcards From the Plane allows you to, for a small fee, send physical postcards
+        anywhere in the world from Lufthansa flights.
+      </p>
+      <ul>
+        <li>Ruby on Rails API</li>
+        <li>Postcard compositing library</li>
+        <li>Admin application and reporting tools</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr/>
+
+  <section class="about-me">
+    <img src="/images/me.png"/>
+    <p>
+      My career in software started in 2002 building ugly websites in Frontpage. Since then, I've
+      graduated from <a href="">Capilano University</a> with a diploma in Interactive Design, worked on making
+      transferring money easier for Canadians at <a href="http://www.versapay.com">VersaPay</a>, helped rebuild
+      <a href="http://getflow.com">Flow App</a> and worked in <a href="http://metalab.co">MetaLab</a>'s
+      amazing consulting department.
+    </p>
+    <p>
+      <strong>In my latest act,</strong> I've entered the consulting world building ambitious iOS, Ruby on
+      Rails, and Javacript applications for clients with big ideas.
+    </p>
+  </section>
+
+  <section class="contact-me">
+    <% if ENV["ACCEPTING_NEW_WORK"] != "false" %>
+      <p class="new-work-label">I'm currently accepting new work!</p>
+    <% end %>
+    <a href="mailto:mattvague@gmail.com" class="contact-button">Contact Me</a>
+    <hr>
+  </section>
 </div>
 
-<div class="social-icons">
-  <a href="http://twitter.com/mattvague" class="symbol">&#xe287;</a>
-  <a href="http://dribbble.com/mattvague" class="symbol">&#xe221;</a>
-  <a href="http://github.com/mattvague" class="symbol">&#xe236;</a>
-</div>
+<footer>
+  <div class="social-icons">
+    <a href="http://twitter.com/mattvague" class="symbol">&#xe287;</a>
+    <a href="http://dribbble.com/mattvague" class="symbol">&#xe221;</a>
+    <a href="http://github.com/mattvague" class="symbol">&#xe236;</a>
+  </div>
+</footer>
