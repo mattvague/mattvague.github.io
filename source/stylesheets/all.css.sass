@@ -37,7 +37,7 @@ body
 .main-content
   margin: 0 auto
   margin-top: 100px
-  width: 780px
+  width: 820px
   text-align: left
   overflow: visible
   padding: 0 30px
@@ -106,112 +106,114 @@ body
         vertical-align: top
         margin-right: 8px
 
-  .portfolio-item
-    @include clearfix
-    clear: both
-    position: relative
-    padding: 70px 0
-    overflow: hidden
+.portfolio-item
+  @include clearfix
+  clear: both
+  position: relative
+  padding: 70px 0
+  overflow: hidden
 
+  img
+    display: inline-block
+
+  .portfolio-item-description
+    display: inline-block
+    width: 350px
+
+  &.image-right
     img
-      display: inline-block
+      float: right
 
     .portfolio-item-description
-      display: inline-block
-      width: 350px
+      margin: 0
+      margin-right: 20px
+      float: left
 
-    &.image-right
-      img
-        float: right
-
-      .portfolio-item-description
-        margin: 0
-        margin-right: 20px
-        float: left
-
-    &.image-left
-      img
-        float: left
-
-      .portfolio-item-description
-        margin: 0
-        margin-left: 20px
-        float: right
-
-    &.portfolio-item-1
-      img
-        position: absolute
-        bottom: -350px
-        @include transform(rotate(-8deg))
-
-    &.portfolio-item-2
-      img
-        position: absolute
-        bottom: -380px
-        right: 5px
-        @include transform(rotate(8deg))
-
-    &.portfolio-item-3
-      .portfolio-item-description
-        position: relative
-        bottom: -20px
-
-      img
-        position: absolute
-        left: -25px
-        bottom: 30px
-
-  .about-me
-    @include clearfix
-    margin: 60px auto 0
-    width: 80%
-
+  &.image-left
     img
       float: left
-      margin-right: 15px
 
-    p
-      display: block
-      font-size: 19px
-      line-height: 28px
+    .portfolio-item-description
+      margin: 0
+      margin-left: 20px
+      float: right
 
-  .contact-me
-    .contact-button
-      border: solid 8px #FFF
-      background-color: #4FC0A7
-      color: #FFF
-      display: block
-      font-weight: 600
-      font-family: 'Fira Sans', sans-serif
-      font-size: 17px
-      padding: 8px 14px
-      text-decoration: none
-      margin: 0 auto 10px
-      text-align: center
-      width: 100px
-      z-index: 1000
+  &.portfolio-item-1
+    img
+      position: absolute
+      bottom: -350px
+      @include transform(rotate(-8deg))
+
+  &.portfolio-item-2
+    img
+      position: absolute
+      bottom: -380px
+      right: 5px
+      @include transform(rotate(8deg))
+
+  &.portfolio-item-3
+    .portfolio-item-description
       position: relative
+      bottom: -20px
 
-      &:hover
-        background-color: #75CEBA
+    img
+      position: absolute
+      left: -25px
+      bottom: 30px
 
-    hr
-      position: relative
-      top: -38px
+.about-me
+  @include clearfix
+  margin: 60px auto 0
+  width: 80%
 
-    .new-work-label
-      text-align: center
-      font-size: 15px
-      font-style: italic
-      margin-top: 40px
+  img
+    float: left
+    margin-right: 15px
 
+  p
+    display: block
+    font-size: 19px
+    line-height: 28px
+
+.contact-me
+  .contact-button
+    border: solid 8px #FFF
+    background-color: #4FC0A7
+    color: #FFF
+    display: block
+    font-weight: 600
+    font-family: 'Fira Sans', sans-serif
+    font-size: 17px
+    padding: 8px 14px
+    text-decoration: none
+    margin: 0 auto 10px
+    text-align: center
+    width: 100px
+    z-index: 1000
+    position: relative
+
+    &:hover
+      background-color: #75CEBA
+
+  hr
+    position: relative
+    top: -38px
+
+  .new-work-label
+    text-align: center
+    font-size: 15px
+    font-style: italic
+    margin-top: 40px
+
+.medium
+  text-align: center
+  margin-top: 80px
+
+  .medium-story
+    display: inline-block
 
 footer
   margin-top: 60px
-
-//@media screen and (max-width: 320px)
-  //.main-content
-    //width: 280px
 
 //
 // Social icons
@@ -222,7 +224,7 @@ footer
   padding-bottom: 20px
 
   .symbol
-    color: #F0F0F0
+    color: lighten($text_color, 22)
     border: none
     text-decoration: none
     font-size: 30px
@@ -231,7 +233,7 @@ footer
     @include single-transition(color, 0.5s)
 
     &:hover
-      color: darken(#F0F0F0, 8)
+      color: darken($text_color, 8)
       @include single-transition(color, 0.1s)
 
 @media screen and (max-width: 320px)
