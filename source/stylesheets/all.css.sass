@@ -13,8 +13,9 @@
     display: table
     clear: both
 
-$heading_color: #4C4C4C
-$text_color: #adadad
+$heading-color: #4C4C4C
+$text-color: #adadad
+$highlight-color: #4FC0A7
 
 body
   -webkit-font-smoothing: antialiased
@@ -62,20 +63,20 @@ body
     font-size: 36px
     font-weight: 500
     font-family: 'Fira Sans', sans-serif
-    color: $heading_color
+    color: $heading-color
     margin: 0 0 9px 0
 
   h2
     font-size: 20px
     font-weight: 500
     font-family: 'Fira Sans', sans-serif
-    color: $heading_color
+    color: $heading-color
     margin: 0 0 9px 0
 
   p
     font-family: 'Avenir', sans-serif
     font-weight: 200
-    color: $text_color
+    color: $text-color
     font-size: 14px
     font-weight: 200
     margin: 0 0 9px 0
@@ -91,11 +92,12 @@ body
   ul
     list-style: none
     padding-left: 0px
+    margin-bottom: 20px
 
     li
       font-family: 'Avenir', sans-serif
       font-weight: 200
-      color: $text_color
+      color: $text-color
       font-size: 14px
       font-weight: 200
       margin: 0 0 5px 0
@@ -105,6 +107,14 @@ body
         display: inline-block
         vertical-align: top
         margin-right: 8px
+
+  a
+    &:link, &:visited
+      color: $highlight-color
+      text-decoration: none
+    &:hover, &:active
+      color: darken($highlight-color, 10)
+      text-decoration: none
 
 .portfolio-item
   @include clearfix
@@ -141,13 +151,13 @@ body
   &.portfolio-item-1
     img
       position: absolute
-      bottom: -350px
+      bottom: -380px
       @include transform(rotate(-8deg))
 
   &.portfolio-item-2
     img
       position: absolute
-      bottom: -380px
+      bottom: -370px
       right: 5px
       @include transform(rotate(8deg))
 
@@ -175,25 +185,29 @@ body
     font-size: 19px
     line-height: 28px
 
+.button, a:link.button, a:visited.button
+  border: solid 8px #FFF
+  background-color: $highlight-color
+  color: #FFF
+  display: inline-block
+  font-weight: 600
+  font-family: 'Fira Sans', sans-serif
+  font-size: 17px
+  padding: 8px 14px
+  text-decoration: none
+  text-align: center
+  margin: 0
+
+  &:hover
+    background-color: darken($highlight-color, 10)
+
 .contact-me
-  .contact-button
-    border: solid 8px #FFF
-    background-color: #4FC0A7
-    color: #FFF
+  .button.contact-button
     display: block
-    font-weight: 600
-    font-family: 'Fira Sans', sans-serif
-    font-size: 17px
-    padding: 8px 14px
-    text-decoration: none
     margin: 0 auto 10px
-    text-align: center
     width: 100px
     z-index: 1000
     position: relative
-
-    &:hover
-      background-color: #75CEBA
 
   hr
     position: relative
@@ -224,7 +238,7 @@ footer
   padding-bottom: 20px
 
   .symbol
-    color: lighten($text_color, 22)
+    color: lighten($text-color, 22)
     border: none
     text-decoration: none
     font-size: 30px
@@ -233,7 +247,7 @@ footer
     @include single-transition(color, 0.5s)
 
     &:hover
-      color: darken($text_color, 8)
+      color: darken($text-color, 8)
       @include single-transition(color, 0.1s)
 
 @media screen and (max-width: 320px)
