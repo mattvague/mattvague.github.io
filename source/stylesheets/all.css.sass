@@ -152,7 +152,7 @@ body
     img
       @include transform(rotate(8deg))
       position: absolute
-      bottom: -220px
+      bottom: -250px
       right: 25px
 
   &.portfolio-item-3
@@ -163,7 +163,7 @@ body
     img
       position: absolute
       left: -25px
-      bottom: 50px
+      bottom: 60px
 
 .about-me
   @include clearfix
@@ -197,12 +197,12 @@ body
     background-color: darken($highlight-color, 10)
 
 .contact-me
+  text-align: center
   margin-top: 30px
 
   .button.contact-button
-    display: block
+    display: inline-block
     margin: 0 auto 10px
-    width: 110px
     z-index: 1000
     position: relative
     text-transform: uppercase
